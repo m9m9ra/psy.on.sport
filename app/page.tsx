@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import Particles from "./components/particles";
 import { Navigation } from "./components/nav";
-import './index.scss'
+import './sass/index.css'
 
 const navigation = [
 	{ name: "Blog", href: "/blog" },
@@ -34,7 +34,8 @@ export default function Home() {
 							может  помочь разобраться в себе, найти ресурсы и преодолеть внутренние барьеры и убеждения
 						</p>
 					</div>
-					<img className="animated15 animatedFadeInUp fadeInUp" src="/main_img.png" alt="" />
+					<img className="animated15 animatedFadeInUp fadeInUp" src={
+						process.env.NODE_ENV === "development" ? "/main_img.png" : process.env.PAGES_BASE_PATH + '/main_img.png' } alt="" />
 				</div>
 			</div>
 			<div className="animated2 animatedFadeInUp fadeInUp" style={{

@@ -3,7 +3,8 @@
 import { ArrowLeft, ChevronLeft, X } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-import './nav.scss';
+import './../sass/nav.css';
+import Image from "next/image";
 
 type props = {
 	canGoBack?: boolean;
@@ -32,7 +33,7 @@ export const Navigation: React.FC = ({ canGoBack }: props) => {
 		<>
 			<header ref={ref} className="navbar">
 				<div className="layout">
-					<img className="favicon" src="/favicon.svg" alt="" />
+					<Image src='favicon.svg' width={50} height={50} alt="" />
 					<div className="middle">
 						<Link href={`/`}>
 							<p className="active">Главная</p>
@@ -50,7 +51,7 @@ export const Navigation: React.FC = ({ canGoBack }: props) => {
 				{burger ?
 					<div className="menu" >
 						<div className="close">
-							<X onClick={toggleBurger}/>
+							<X onClick={toggleBurger} />
 						</div>
 						<Link href={`/`}>
 							<p className="active" onClick={toggleBurger}>Главная</p>

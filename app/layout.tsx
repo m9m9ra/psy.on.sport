@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
 import { Navigation } from "./components/nav";
 import Link from "next/link";
-import './components/nav.scss'
+import './sass/nav.css'
 
 export const metadata: Metadata = {
 	title: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 		},
 	},
 	icons: {
-		shortcut: "/favicon.png",
+		shortcut: process.env.NODE_ENV === "development" ? "favicon.svg" : process.env.PAGES_BASE_PATH + 'favicon.svg',
 	},
 };
 const inter = Inter({

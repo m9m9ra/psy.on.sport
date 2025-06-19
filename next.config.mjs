@@ -4,9 +4,13 @@ import { withContentlayer } from "next-contentlayer";
 const nextConfig = {
 	output: "export",
 	distDir: "dist",
+	basePath: process.env.PAGES_BASE_PATH,
 	pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 	experimental: {
 		mdxRs: true,
+	},
+	images: {
+		unoptimized: true,
 	},
 };
 

@@ -1,5 +1,5 @@
 {
-  "name": "m9m9ra.com",
+  "name": "m9m9ra.dev",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -25,6 +25,7 @@
     "rehype-pretty-code": "^0.10.1",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "3.0.1",
+    "sass": "^1.89.2",
     "typescript": "^5.2.2"
   },
   "devDependencies": {

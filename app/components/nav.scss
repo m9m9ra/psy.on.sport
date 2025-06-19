@@ -1,0 +1,106 @@
+.navbar {
+    background-color: transparent;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    transition: 1s;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 999999;
+
+    @media (max-width: 900px) {
+        background-color: #ffd5005b;
+        border-radius: 0 0 16px 16px;
+    }
+
+    .layout {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 900px) {
+            width: 96%;
+        }
+
+        .favicon {}
+
+        .middle {
+            @media (max-width: 800px) {
+                display: none;
+            }
+
+            width: 74%;
+            padding-left: 8%;
+            padding-right: 8%;
+            height: 80px;
+            background-color: #FFD500;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: 0px solid;
+            justify-content: space-between;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+
+            p {}
+
+            p.active {
+                color: whitesmoke;
+                text-decoration: underline;
+            }
+
+            p:hover {
+                scale: 1.1;
+                transition: 1s;
+                // color: whitesmoke;
+            }
+        }
+
+        .burger {
+            display: grid;
+            grid-gap: 4px;
+
+            div {
+                background-color: black;
+                width: 24px;
+                height: 3px;
+                border-radius: 8px;
+            }
+        }
+
+        .burger:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.menu {
+    transition: 1s;
+    position: absolute;
+    z-index: 99999;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 12px;
+    padding: 10px;
+    padding-top: 24px;
+    background-color: #FFD500;
+    height: 100vh;
+    width: 100vw;
+
+    .close {
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+}

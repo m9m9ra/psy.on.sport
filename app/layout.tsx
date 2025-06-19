@@ -3,20 +3,23 @@ import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
+import { Navigation } from "./components/nav";
+import Link from "next/link";
+import './components/nav.scss'
 
 export const metadata: Metadata = {
 	title: {
-		default: "M9M9Ra | Development",
+		default: "Спортивная психология",
 		template: "%s",
 	},
-	description: "M9M9Ra | Development: Flutter & React Native",
+	description: "Индивидуальная консультация спортивного психолога",
 	authors: {
 		name: 'M9M9Ra | Development',
 		url: 'https://github.com/m9m9ra'
 	},
 	openGraph: {
 		title: "M9M9Ra | Development",
-		description: "M9M9Ra | Development: Flutter & React Native",
+		description: "Индивидуальная консультация спортивного психолога",
 		url: "https://m9m9ra.github.io",
 		siteName: "m9m9ra.github.io",
 		images: [
@@ -26,7 +29,7 @@ export const metadata: Metadata = {
 				height: 397, // 1080
 			},
 		],
-		locale: "en-US",
+		locale: "ru-RU",
 		type: "website",
 	},
 	robots: {
@@ -39,12 +42,6 @@ export const metadata: Metadata = {
 			"max-image-preview": "large",
 			"max-snippet": -1,
 		},
-	},
-	twitter: {
-		title: "M9M9Ra",
-		creator: '@m9m9ra',
-		site: 'https://m9m9ra.github.io',
-		card: "summary_large_image",
 	},
 	icons: {
 		shortcut: "/favicon.png",
@@ -69,18 +66,19 @@ export default function RootLayout({
 		<html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
 			<head>
 				<Analytics />
-				<meta
+				{/* <meta
 					name="google-site-verification"
 					content="z4BV_LeD-sc-C4cwvDTeD_ZJG0wIUiIEWwQ7pxryAOY"
 				/>
-				<meta name="yandex-verification" content="4213751e39cb041d" />
+				<meta name="yandex-verification" content="4213751e39cb041d" /> */}
 				{/* <!-- Yandex.RTB --> */}
 				<script>window.yaContextCb=window.yaContextCb||[]</script>
 				<script src="https://yandex.ru/ads/system/context.js" async></script>
 			</head>
-			<body className={`bg-black ${
-					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
+			<body className={`${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
 				}`}>
+					<div style={{height: 80}}></div>
+				<Navigation />
 				{children}
 			</body>
 		</html>

@@ -1,8 +1,9 @@
 "use client";
 // @ts-ignore
-import { ArrowLeft, ChevronLeft } from "lucide-react";
+import { ArrowLeft, ChevronLeft, X } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import './nav.scss';
 
 type props = {
 	canGoBack?: boolean;
@@ -11,6 +12,7 @@ type props = {
 export const Navigation: React.FC = ({ canGoBack }: props) => {
 	const ref = useRef<HTMLElement>(null);
 	const [isIntersecting, setIntersecting] = useState(true);
+	const [burger, setBurger] = useState<boolean>(false);
 
 	useEffect(() => {
 		if (!ref.current) return;
@@ -22,47 +24,45 @@ export const Navigation: React.FC = ({ canGoBack }: props) => {
 		return () => observer.disconnect();
 	}, []);
 
-	return (
-		<header ref={ref}>
-			<div
-				className={`fixed inset-x-0 top-0 z-50 backdrop-blur  duration-200 border-b  ${
-					isIntersecting
-						? "bg-zinc-900/0 border-transparent"
-						: "bg-zinc-900/500  border-zinc-800 "
-				}`}
-			>
-				<div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
-					<div className="flex justify-between gap-8">
-						<Link
-							href="/blog"
-							className="duration-200 text-zinc-400 hover:text-zinc-100"
-						>
-							Blog
-						</Link>
-						<Link
-							href="/projects"
-							className="duration-200 text-zinc-400 hover:text-zinc-100"
-						>
-							Projects
-						</Link>
-						<Link
-							href="/contact"
-							className="duration-200 text-zinc-400 hover:text-zinc-100"
-						>
-							Contact
-						</Link>
-					</div>
+	const toggleBurger = () => {
+		setBurger(!burger)
+	}
 
-					{canGoBack ?? (
-						<Link
-							href="/"
-							className="duration-200 text-zinc-300 hover:text-zinc-100"
-						>
-							<ChevronLeft className="w-6 h-6 " />
+	return (
+		<>
+			<header ref={ref} className="navbar">
+				<div className="layout">
+					<img className="favicon" src="/favicon.svg" alt="" />
+					<div className="middle">
+						<Link href={`/`}>
+							<p className="active">Главная</p>
 						</Link>
-					)}
+						<Link href={`/`}><p>О проекте</p></Link>
+						<Link href={`/`}><p>Наша команда</p></Link>
+						<Link href={`/`}><p>Здесь о полезном</p></Link>
+					</div>
+					<div onClick={toggleBurger} className="burger">
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
 				</div>
-			</div>
-		</header>
+				{burger ?
+					<div className="menu" >
+						<div className="close">
+							<X onClick={toggleBurger}/>
+						</div>
+						<Link href={`/`}>
+							<p className="active" onClick={toggleBurger}>Главная</p>
+						</Link>
+						<Link href={`/`}><p onClick={toggleBurger}>О проекте</p></Link>
+						<Link href={`/`}><p onClick={toggleBurger}>Наша команда</p></Link>
+						<Link href={`/`}><p onClick={toggleBurger}>Здесь о полезном</p></Link>
+					</div> : null
+				}
+			</header>
+
+		</>
+
 	);
 };

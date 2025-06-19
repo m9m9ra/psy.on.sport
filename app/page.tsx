@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import Particles from "./components/particles";
 import { Navigation } from "./components/nav";
+import './index.scss'
 
 const navigation = [
 	{ name: "Blog", href: "/blog" },
@@ -11,48 +12,74 @@ const navigation = [
 
 export default function Home() {
 	return (
-		<div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-			<nav className="my-16 animate-fade-in">
-				<ul className="flex items-center justify-center gap-4">
-					{navigation.map((item) => (
-						<Link
-							key={item.href}
-							href={item.href}
-							className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-						>
-							{item.name}
-						</Link>
-					))}
-				</ul>
-			</nav>
-			{/* <Navigation canGoBack/> */}
-			<div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-			<Particles
-				className="absolute inset-0 -z-10 animate-fade-in"
-				quantity={100}
-			/>
-			<h1 className="py-3.5 px-0.5 z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
-				M9M9Ra
-				{/* <span style={{
-					fontSize: 1,
-					color: '#ffffff00'
-				}}>Development & MVP</span> */}
-			</h1>
+		<div className="index">
+			<div className="layoutTop">
+				<div className="content">
+					<div className="left">
+						<h1 className="animated animatedFadeInUp fadeInUp">
+							Индивидуальная <br />консультация<br /> спортивного психолога
+						</h1>
+						<button className="animated15 animatedFadeInUp fadeInUp">
+							Записаться
+						</button>
+						<p className="animated2 animatedFadeInUp fadeInUp">
+							Мы верим, что успех в <span style={{
+								color: '#FFD500'
+							}}>спорте</span> — это не только физическая подготовка, но и сильный характер, уверенность, психологическая и ментальная стойкость спортсмена.
+							<span style={{
+								color: '#FF3380'
+							}}>
+								Спортивный психолог
+							</span>
+							может  помочь разобраться в себе, найти ресурсы и преодолеть внутренние барьеры и убеждения
+						</p>
+					</div>
+					<img className="animated15 animatedFadeInUp fadeInUp" src="/main_img.png" alt="" />
+				</div>
+			</div>
+			<div className="animated2 animatedFadeInUp fadeInUp" style={{
+				paddingTop: 36,
+				color: '#FFBDD6',
+				fontSize: 36
+			}}>
 
-			<div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-			<div className="my-16 text-center animate-fade-in">
-				<h2 className="text-sm text-zinc-500 ">
-					I'm developing{" "}
-					<Link
-						href="/projects/xrunner"
-						className="underline duration-500 hover:text-zinc-300"
-					>
-						mobile applications
-					</Link> and MVP
-					<br />
-					<br />
-					Flutter / React-Native
-				</h2>
+				{
+					// @ts-ignore
+					<marquee direction="right"
+						truespeed
+						scrollamount="12">
+						поддержка поддержка поддержка поддержка поддержка поддержка
+						поддержка поддержка поддержка поддержка поддержка поддержка
+						поддержка поддержка поддержка поддержка поддержка поддержка
+						поддержка поддержка поддержка поддержка поддержка поддержка
+						поддержка поддержка поддержка поддержка поддержка поддержка
+					</marquee>}
+			</div>
+			<div className="layoutPink">
+				<h2 style={{
+					color: 'white'
+				}}>Многие считают, что...</h2>
+				<p className="first">
+					Успех в спорте зависит преимущественно от физических усилий,
+					но в 
+					{/* <br /> */}
+					действительности побеждает тот, кто психологически более
+					{/* <br /> */}
+					 подготовлен.
+				</p>
+				<p>
+					<span style={{
+						color: "#FF88B5"
+					}}>
+						«В борьбе равных соперников побеждает психология»
+					</span>
+					<br />основоположник олимпийского движения Пьер де Кубертен
+				</p>
+			</div>
+			<div style={{
+				height: 1000
+			}}>
+
 			</div>
 		</div>
 	);

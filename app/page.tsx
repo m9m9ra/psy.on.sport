@@ -9,7 +9,7 @@ const navigation = [
 	{ name: "Projects", href: "/projects" },
 	{ name: "Contact", href: "/contact" },
 ];
-
+// @ts-ignore
 export default function Home() {
 	return (
 		<div className="index">
@@ -53,7 +53,9 @@ export default function Home() {
 						поддержка поддержка поддержка поддержка поддержка поддержка
 						поддержка поддержка поддержка поддержка поддержка поддержка
 						поддержка поддержка поддержка поддержка поддержка поддержка
-					</marquee>}
+						{/* @ts-ignore */}
+					</marquee>
+					}
 			</div>
 			<div className="layoutPink">
 				<h2 style={{

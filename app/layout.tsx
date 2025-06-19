@@ -5,7 +5,6 @@ import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
 import { Navigation } from "./components/nav";
 import Link from "next/link";
-import './sass/nav.css'
 
 export const metadata: Metadata = {
 	title: {

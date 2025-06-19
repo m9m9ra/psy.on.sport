@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import Particles from "./components/particles";
 import { Navigation } from "./components/nav";
 import './sass/index.css'
+import './sass/index.css.map'
+import Image from "next/image";
 
 const navigation = [
 	{ name: "Blog", href: "/blog" },
@@ -34,8 +36,7 @@ export default function Home() {
 							может  помочь разобраться в себе, найти ресурсы и преодолеть внутренние барьеры и убеждения
 						</p>
 					</div>
-					<img className="animated15 animatedFadeInUp fadeInUp" src={
-						process.env.NODE_ENV === "development" ? "/main_img.png" : process.env.PAGES_BASE_PATH + '/main_img.png' } alt="" />
+					<Image className="animated15 animatedFadeInUp fadeInUp" width={541} height={361} src={'main_img.png'} alt={''} />
 				</div>
 			</div>
 			<div className="animated2 animatedFadeInUp fadeInUp" style={{
@@ -56,7 +57,7 @@ export default function Home() {
 						поддержка поддержка поддержка поддержка поддержка поддержка
 						{/* @ts-ignore */}
 					</marquee>
-					}
+				}
 			</div>
 			<div className="layoutPink">
 				<h2 style={{
@@ -64,11 +65,11 @@ export default function Home() {
 				}}>Многие считают, что...</h2>
 				<p className="first">
 					Успех в спорте зависит преимущественно от физических усилий,
-					но в 
+					но в
 					{/* <br /> */}
 					действительности побеждает тот, кто психологически более
 					{/* <br /> */}
-					 подготовлен.
+					подготовлен.
 				</p>
 				<p>
 					<span style={{

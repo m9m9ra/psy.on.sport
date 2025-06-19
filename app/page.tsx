@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import Particles from "./components/particles";
 import { Navigation } from "./components/nav";
-import './sass/index.css'
+import '/sass/index.css'
 import Image from "next/image";
 
 const navigation = [

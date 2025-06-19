@@ -1,0 +1,143 @@
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 180px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 180px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animated15 {
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animated2 {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
+.index {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.index .layoutPink {
+  width: 100%;
+  margin-top: 58px;
+  background-color: rgba(255, 189, 214, 0.3058823529);
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 17px;
+}
+@media (max-width: 900px) {
+  .index .layoutPink {
+    height: 275px;
+    padding: 0 2%;
+  }
+}
+.index .layoutPink h2 {
+  font-size: 36px;
+  font-weight: 900;
+}
+@media (max-width: 900px) {
+  .index .layoutPink h2 {
+    font-size: 28px;
+  }
+}
+.index .layoutPink p.first {
+  font-size: 20px;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .index .layoutPink p.first {
+    text-align: center;
+    font-size: 11px;
+  }
+}
+.index .layoutPink p {
+  font-size: 20px;
+  text-align: center;
+  max-width: 600px;
+}
+@media (max-width: 900px) {
+  .index .layoutPink p {
+    text-align: left;
+    font-size: 11px;
+  }
+}
+.index .layoutTop {
+  width: 80%;
+  margin-top: 135px;
+}
+@media (max-width: 900px) {
+  .index .layoutTop {
+    width: 96%;
+    margin-top: 2%;
+  }
+}
+.index .layoutTop .content {
+  display: flex;
+  justify-content: space-between;
+}
+.index .layoutTop .content .left h1 {
+  font-size: 36px;
+  font-weight: 900;
+  padding-bottom: 25px;
+}
+.index .layoutTop .content .left button {
+  background-color: #FF3380;
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  border-radius: 29.5px;
+  padding: 16px 117px;
+  margin-bottom: 43px;
+}
+.index .layoutTop .content .left p {
+  font-weight: bold;
+  font-size: 13px;
+}
+@media (max-width: 1000px) {
+  .index .layoutTop .content img {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

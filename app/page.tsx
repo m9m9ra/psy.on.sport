@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import Particles from "./components/particles";
 import { Navigation } from "./components/nav";
 import './sass/index.css'
-import './sass/index.css.map'
 import Image from "next/image";
 
 const navigation = [
